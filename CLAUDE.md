@@ -6,11 +6,37 @@ A task board application for managing tasks visually (Kanban-style or similar).
 
 ## Tech Stack
 
-- (Update this section as the stack is decided)
+- **React 19** — UI ライブラリ
+- **Vite 8** — ビルドツール / 開発サーバー
+- **CSS Modules なし** — コンポーネントごとに `.css` ファイルを分けて plain CSS で記述
+- **localStorage** — タスクの永続化
+
+## Component Naming Conventions
+
+- コンポーネントファイルは PascalCase: `App.jsx`, `TaskItem.jsx`
+- コンポーネント関数は PascalCase の default export: `export default function App()`
+- CSS クラス名は kebab-case: `.task-item`, `.add-btn`
+- イベントハンドラは `handle` プレフィックス: `handleKeyDown`、または動詞のみ: `addTask`, `toggleTask`, `deleteTask`
 
 ## Project Structure
 
-- (Update this section as directories are created)
+```
+task-board/
+├── src/
+│   ├── main.jsx      # エントリポイント
+│   ├── App.jsx       # ルートコンポーネント
+│   ├── App.css       # App のスタイル
+│   └── index.css     # グローバルスタイル
+├── index.html
+└── vite.config.js
+```
+
+## Deploy
+
+- **本番 URL**: https://s0000288470-art.github.io/task-board/
+- **方法**: `main` ブランチへのプッシュで GitHub Actions が自動ビルド・デプロイ
+- **設定ファイル**: `.github/workflows/deploy.yml`
+- Vite の `base` は `/task-board/` に設定済み
 
 ## Development Guidelines
 
